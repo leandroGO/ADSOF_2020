@@ -5,6 +5,8 @@ import java.util.TreeSet;
  * Esta clase mantiene una caché de números primos, para
  * evitar cálculos repetidos, y calcula si un número es primo
  * La cache conserva los primos calculados
+ * 
+ * @author Leandro Garcia & Fabian Gutierrez
  */
 public class Primos {
     // usamos un conjunto ordenado, que implementa TreeSet
@@ -68,6 +70,11 @@ public class Primos {
         return true;
     }
 
+    /**
+     * Halla los divisores primos de n
+     * @param n un número entero
+     * @return los divisores primos de n
+     */
     public SortedSet<Integer> divisoresPrimos(int n){
         SortedSet<Integer> d = new TreeSet<>();
 
