@@ -3,10 +3,10 @@ import java.util.TreeSet;
 
 /**
  * Esta clase mantiene una caché de números primos, para
- * evitar cálculos repetidos, y calcula si un número es primo
+ * evitar cálculos repetidos, y calcula si un número es primo.
  * La cache conserva los primos calculados
  * 
- * @author Leandro Garcia & Fabian Gutierrez
+ * @author Leandro García y Fabián Gutiérrez
  */
 public class Primos {
     // usamos un conjunto ordenado, que implementa TreeSet
@@ -31,8 +31,12 @@ public class Primos {
      * @return si n es primo
      */
     public boolean esPrimo(int n){
-        if (n < 2) return false;
-        if (n > max) actualizaPrimos(n);
+        if (n < 2) {
+        	return false;
+        }
+        if (n > max) {
+        	actualizaPrimos(n);
+        }
         return primos.contains(n);
     }
 
