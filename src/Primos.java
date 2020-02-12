@@ -90,6 +90,9 @@ public class Primos {
                 if (n%p == 0) {
                     d.add(p);
                 }
+                if (p >= n/2) {
+                    break;
+                }
             }
         }
         return d;
