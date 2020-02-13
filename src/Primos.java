@@ -1,5 +1,6 @@
 import java.util.SortedSet;
 import java.util.TreeSet;
+import java.lang.Math;
 
 /**
  * Esta clase mantiene una caché de números primos, para
@@ -26,7 +27,7 @@ public class Primos {
     }
 
     /**
-     *
+     * Determina si n es primo
      * @param n un número entero
      * @return si n es primo
      */
@@ -47,7 +48,7 @@ public class Primos {
 
     /**
      * Este método llama a compruebaPrimo, y lo añade, si es primo,
-     * para todos los números entre max+1 y n. Actualiza max al terminar.
+     * para todos los números entre max+1 y n. Actualiza max al terminar
      * @param n
      */
     private void actualizaPrimos(int n){
@@ -66,9 +67,14 @@ public class Primos {
      * @return si n es primo
      */
     private boolean compruebaPrimo(int n){
+        double root = Math.sqrt((double)n);
+
         for (int p:primos) {
             if (n%p == 0) {
                 return false;
+            }
+            if (p > root) {
+            	break;
             }
         }
         return true;
