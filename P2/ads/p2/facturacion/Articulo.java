@@ -25,4 +25,9 @@ public abstract class Articulo {
 		return ((precioUnitario * unidades) - descuento(unidades)) 
                      * (1.0 + tipoIVA());
 	  }
+
+	public String toString() {
+		return "Id:" + identificador + " " + descripcion + " " +
+				"Precio final: " + precioUnitario;
+	}
 }
