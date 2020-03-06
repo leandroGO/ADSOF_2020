@@ -50,7 +50,7 @@ public abstract class Electrodomestico {
     public double descuentoViejo(Electrodomestico viejo) {
         d = viejo.claseEnergetica - this.claseEnergetica;
 
-        if (viejo.claseEnergetica == Desconocido) {
+        if (viejo.claseEnergetica == Desconocida) {
             return 10;
         }
 
@@ -61,19 +61,6 @@ public abstract class Electrodomestico {
         } else {
             return 25 + 5 * d;
         }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Electrodomestico)) {
-            return false;
-        }
-        Electrodomestico electrodomestico = (Electrodomestico) o;
-        return Objects.equals(marca, electrodomestico.marca) && Objects.equals(modelo, electrodomestico.modelo)
-                && precioBase == electrodomestico.precioBase
-                && Objects.equals(claseEnergetica, electrodomestico.claseEnergetica);
     }
 
     @Override
