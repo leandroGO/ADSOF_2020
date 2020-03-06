@@ -36,7 +36,7 @@ public class Dimension {
     }
 
     public calcularVolumen() {
-        return ancho * largo * alto;
+        return (ancho * largo * alto) / 1000000; //En metros cubicos
     }
 
     @Override
