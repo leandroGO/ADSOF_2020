@@ -78,8 +78,6 @@ public abstract class Electrodomestico {
 
     @Override
     public String toString() {
-        return "{" + " marca='" + getMarca() + "'" + ", modelo='" + getModelo() + "'" + ", precioBase='"
-                + getPrecioBase() + "'" + ", claseEnergetica='" + getClaseEnergetica() + "'" + "}";
+        return getMarca() + " " + getModelo() + ", " + getPrecioBase() + " Euros";
     }
-
 }

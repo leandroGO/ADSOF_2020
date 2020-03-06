@@ -1,9 +1,20 @@
 package ads.practica3;
+import ads.practica3.Electrodomestico;
 
 public class Television extends Electrodomestico {
     private int tamPantalla;
 
-    public Television() {
-        
-    }    
+    public Television(String marca, String modelo, double precioBase, ClaseEnergetica claseEnergetica,
+            int tamPantalla) {
+        super(marca, modelo, precioBase, claseEnergetica);
+        this.tamPantalla = tamPantalla;
+    }
+
+    public int getTamPantalla() {
+        return this.tamPantalla;
+    }
+
+    public void setTamPantalla(int tamPantalla) {
+        this.tamPantalla = tamPantalla;
+    }
 }
