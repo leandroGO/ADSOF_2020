@@ -3,16 +3,12 @@ package ads.practica3;
 import ads.practica3.Electrodomestico;
 
 public abstract class ElectrodomesticoVolumen extends Electrodomestico{
-    private double alto;
-    private double ancho;
-    private double largo;
+    Dimension dimension;
     private double peso;
 
-    public ElectrodomesticoVolumen(String marca, String modelo, double precioBase, ClaseEnergetica claseEnergetica, double alto, double ancho, double largo, double peso) {
+    public ElectrodomesticoVolumen(String marca, String modelo, double precioBase, ClaseEnergetica claseEnergetica, Dimension dimension, double peso) {
         super(marca, modelo, precioBase, claseEnergetica);
-        this.alto = alto;
-        this.ancho = ancho;
-        this.largo = largo;
+        this.dimension = dimension;
         this.peso = peso;
     }
 
