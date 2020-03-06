@@ -1,5 +1,4 @@
 package ads.practica3;
-import ads.practica3.Electrodomestico;
 
 public class Television extends Electrodomestico {
     private int tamPantalla;
