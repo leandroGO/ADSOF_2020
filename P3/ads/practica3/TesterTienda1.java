@@ -1,7 +1,7 @@
 package ads.practica3;
 
 /**
- * Tester del apartado 1 de la práctica 3
+ * Tester del apartado 1 de la prï¿½ctica 3
  * @author Profesores ADS
  */
 public class TesterTienda1 {
