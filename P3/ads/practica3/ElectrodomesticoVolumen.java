@@ -12,32 +12,16 @@ public abstract class ElectrodomesticoVolumen extends Electrodomestico{
         this.peso = peso;
     }
 
-    public double getAlto() {
-        return this.alto;
+    public Dimension getDimension() {
+        return dimension;
     }
 
-    public void setAlto(double alto) {
-        this.alto = alto;
-    }
-
-    public double getAncho() {
-        return this.ancho;
-    }
-
-    public void setAncho(double ancho) {
-        this.ancho = ancho;
-    }
-
-    public double getLargo() {
-        return this.largo;
-    }
-
-    public void setLargo(double largo) {
-        this.largo = largo;
+    public void setDimension(Dimension dimension) {
+        this.dimension = dimension;
     }
 
     public double getPeso() {
-        return this.peso;
+        return peso;
     }
 
     public void setPeso(double peso) {
@@ -45,12 +29,10 @@ public abstract class ElectrodomesticoVolumen extends Electrodomestico{
     }
 
     @Override
-    public String toString() {
-        return "{" +
-            " alto='" + getAlto() + "'" +
-            ", ancho='" + getAncho() + "'" +
-            ", largo='" + getLargo() + "'" +
-            ", peso='" + getPeso() + "'" +
-            "}";
+    public java.lang.String toString() {
+        return "ElectrodomesticoVolumen{" +
+                "dimension=" + dimension +
+                ", peso=" + peso +
+                '}';
     }
 }
