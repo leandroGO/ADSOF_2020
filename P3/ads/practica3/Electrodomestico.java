@@ -49,6 +49,11 @@ public abstract class Electrodomestico {
 
     public double descuentoViejo(Electrodomestico viejo) {
         int desc = 25;
+
+        if (viejo == null) {
+            return 0;
+        }
+
         int d = viejo.claseEnergetica.valor() - this.claseEnergetica.valor();
 
         if (viejo.claseEnergetica == ClaseEnergetica.Desconocida) {
