@@ -1,8 +1,8 @@
 package ads.practica3;
 
 public class Venta {
-    Electrodomestico electrodomestico;
-    Electrodomestico electrodomesticoViejo;
+    private Electrodomestico electrodomestico;
+    private Electrodomestico electrodomesticoViejo;
 
     public Venta(Electrodomestico electrodomestico) {
         this.electrodomestico = electrodomestico;

@@ -4,7 +4,7 @@ public abstract class Electrodomestico {
     private String marca;
     private String modelo;
     private double precioBase;
-    ClaseEnergetica claseEnergetica;
+    private ClaseEnergetica claseEnergetica;
 
     public Electrodomestico(String marca, String modelo, double precioBase, ClaseEnergetica claseEnergetica) {
         this.marca = marca;
@@ -48,19 +48,20 @@ public abstract class Electrodomestico {
     public abstract double costeDomicilio();
 
     public double descuentoViejo(Electrodomestico viejo) {
-        d = viejo.claseEnergetica - this.claseEnergetica;
+        int desc = 25;
+        int d = viejo.claseEnergetica.valor() - this.claseEnergetica.valor();
 
-        if (viejo.claseEnergetica == Desconocida) {
+        if (viejo.claseEnergetica == ClaseEnergetica.Desconocida) {
             return 10;
         }
 
-        if (d == 0) {
-            return 25;
-        } else if (d > 0) {
-            return 25 + 10 * d;
-        } else {
-            return 25 + 5 * d;
+        if (d > 0) {
+            desc += 10 * d;
+        } else if (d < 0) {
+            desc += 5 * d;
         }
+
+        return desc;
     }
 
     @Override

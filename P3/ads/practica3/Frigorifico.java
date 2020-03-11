@@ -5,8 +5,14 @@ import ads.practica3.ElectrodomesticoVolumen;
 public class Frigorifico extends ElectrodomesticoVolumen {
     private boolean noFrost;
 
-    public Frigorifico(boolean noFrost) {
-        super();
+    public Frigorifico(String marca,
+                       String modelo,
+                       double precioBase,
+                       ClaseEnergetica claseEnergetica,
+                       Dimension dimension,
+                       double peso,
+                       boolean noFrost) {
+        super(marca, modelo, precioBase, claseEnergetica, dimension, peso);
         this.noFrost = noFrost;
     }
 
@@ -18,14 +24,8 @@ public class Frigorifico extends ElectrodomesticoVolumen {
         this.noFrost = noFrost;
     }
 
-    public double costeDomiciclio() {
-        return 70 * this.dimension.calcularVolumen();
-    }
-
     @Override
-    public String toString() {
-        return "{" +
-            " noFrost='" + isNoFrost() + "'" +
-            "}";
+    public double costeDomicilio() {
+        return 70 * this.dimension.calcularVolumen();
     }
 }

@@ -5,12 +5,12 @@ public class Lavadora extends ElectrodomesticoVolumen {
     private int rpmCentrifugado;
 
     public Lavadora(String marca, String modelo, double precioBase, ClaseEnergetica claseEnergetica,
-            Dimension dimension, double peso) {
+                    Dimension dimension, double peso) {
         super(marca, modelo, precioBase, claseEnergetica, dimension, peso);
     }
 
     public Lavadora(String marca, String modelo, double precioBase, ClaseEnergetica claseEnergetica,
-            Dimension dimension, double peso, double kilosDeCarga, int rpmCentrifugado) {
+                    Dimension dimension, double peso, double kilosDeCarga, int rpmCentrifugado) {
         super(marca, modelo, precioBase, claseEnergetica, dimension, peso);
         this.kilosDeCarga = kilosDeCarga;
         this.rpmCentrifugado = rpmCentrifugado;
@@ -30,5 +30,10 @@ public class Lavadora extends ElectrodomesticoVolumen {
 
     public void setRpmCentrifugado(int rpmCentrifugado) {
         this.rpmCentrifugado = rpmCentrifugado;
+    }
+
+    @Override
+    public double costeDomicilio() {
+        return 0;
     }
 }

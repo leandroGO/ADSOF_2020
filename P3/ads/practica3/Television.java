@@ -16,4 +16,9 @@ public class Television extends Electrodomestico {
     public void setTamPantalla(int tamPantalla) {
         this.tamPantalla = tamPantalla;
     }
+
+    @Override
+    public double costeDomicilio() {
+        return 0;
+    }
 }

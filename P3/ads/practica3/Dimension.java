@@ -35,7 +35,7 @@ public class Dimension {
         this.alto = alto;
     }
 
-    public calcularVolumen() {
+    public double calcularVolumen() {
         return (ancho * largo * alto) / 1000000; //En metros cubicos
     }
 
