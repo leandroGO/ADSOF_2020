@@ -1,7 +1,7 @@
 package ads.practica3;
 
 /**
- * Tester del apartado 1 de la pr�ctica 3
+ * Tester del apartado 1 de la practica 3
  *
  * @author Profesores ADS
  */

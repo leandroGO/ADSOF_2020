@@ -16,12 +16,15 @@ public class VentaDomicilio extends Venta {
 
     @Override
     public String getTicket() {
-        return  "--------------------------------------------\n" +
-                "Producto vendido: " + getElectrodomestico() +
-                "\n--------------------------------------------\n" +
-                "Precio producto: " + getElectrodomestico().getPrecioBase() +
-                "\nDescuento entrega: " + getElectrodomestico().descuentoViejo(getElectrodomesticoViejo()) +
-                "\nCoste porte: " + getElectrodomestico().costeDomicilio() +
-                "\nTOTAL: " + precioFinal()+ "\n";
+        return String.format("--------------------------------------------\n" +
+                "Producto vendido: %s\n" +
+                "--------------------------------------------\n" +
+                "Precio producto:%15.2f Euros\n" +
+                "Descuento entrega:%13.2f Euros\n" +
+                "Coste porte:%19.2f Euros\n" +
+                "TOTAL:%25.2f Euros\n",
+                getElectrodomestico(), getElectrodomestico().getPrecioBase(),
+                getElectrodomestico().descuentoViejo(getElectrodomesticoViejo()),
+                getElectrodomestico().costeDomicilio(), precioFinal());
     }
 }

@@ -61,7 +61,7 @@ public abstract class Electrodomestico {
         }
 
         if (d > 0) {
-            desc += 10 * d;
+            desc += 15 * d;
         } else if (d < 0) {
             desc += 5 * d;
         }

@@ -19,6 +19,14 @@ public class Television extends Electrodomestico {
 
     @Override
     public double costeDomicilio() {
-        return 0;
+        if (tamPantalla <= 40 && getPrecioBase() > 500) {
+            return 0;
+        }
+        else if (tamPantalla <= 40 && getPrecioBase() <= 500) {
+            return 35;
+        }
+        else {
+            return 35 + (tamPantalla - 40);
+        }
     }
 }

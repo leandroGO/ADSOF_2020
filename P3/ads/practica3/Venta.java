@@ -1,5 +1,6 @@
 package ads.practica3;
 
+
 public class Venta {
     private Electrodomestico electrodomestico;
     private Electrodomestico electrodomesticoViejo;
@@ -34,12 +35,14 @@ public class Venta {
     }
 
     public String getTicket() {
-        return  "--------------------------------------------\n" +
-                "Producto vendido: " + electrodomestico +
-                "\n--------------------------------------------\n" +
-                "Precio producto: " + electrodomestico.getPrecioBase() +
-                "\nDescuento entrega: " + electrodomestico.descuentoViejo(electrodomesticoViejo) +
-                "\nTOTAL: " + precioFinal()+ "\n";
+        return String.format("--------------------------------------------\n" +
+                            "Producto vendido: %s\n" +
+                            "--------------------------------------------\n" +
+                            "Precio producto:%15.2f Euros\n" +
+                            "Descuento entrega:%13.2f Euros\n" +
+                            "TOTAL:%25.2f Euros\n",
+                            electrodomestico, electrodomestico.getPrecioBase(),
+                            electrodomestico.descuentoViejo(electrodomesticoViejo), precioFinal());
     }
 
     @Override

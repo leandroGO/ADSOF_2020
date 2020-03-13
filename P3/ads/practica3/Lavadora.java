@@ -34,6 +34,11 @@ public class Lavadora extends ElectrodomesticoVolumen {
 
     @Override
     public double costeDomicilio() {
-        return 0;
+        if (getPeso() <= 50) {
+            return 35;
+        }
+        else {
+            return 35 + 0.5 * (Math.ceil(getPeso()) - 50);
+        }
     }
 }
