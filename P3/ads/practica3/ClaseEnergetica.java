@@ -11,4 +11,21 @@ public enum ClaseEnergetica {
     public int valor() {
         return valor;
     }
+
+    public static ClaseEnergetica parseClase(String nombre) {
+        switch (nombre) {
+            case "A":
+                return ClaseEnergetica.A;
+            case "B":
+                return ClaseEnergetica.B;
+            case "C":
+                return ClaseEnergetica.C;
+            case "D":
+                return ClaseEnergetica.D;
+            case "Desconocida":
+                return ClaseEnergetica.Desconocida;
+            default:
+                return null;
+        }
+    }
 }

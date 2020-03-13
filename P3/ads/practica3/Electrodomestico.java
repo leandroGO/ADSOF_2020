@@ -71,6 +71,6 @@ public abstract class Electrodomestico {
 
     @Override
     public String toString() {
-        return getMarca() + " " + getModelo() + ", " + getPrecioBase() + " Euros";
+        return String.format("%s %s, %.2f Euros", getMarca(), getModelo(), getPrecioBase());
     }
 }
