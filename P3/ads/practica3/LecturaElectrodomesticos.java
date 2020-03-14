@@ -25,7 +25,7 @@ public class LecturaElectrodomesticos {
                     e = new Frigorifico(linea[0], linea[1], Double.parseDouble(linea[2]),
                             ClaseEnergetica.parseClase(linea[3]), new Dimension(Double.parseDouble(linea[4]),
                             Double.parseDouble(linea[5]), Double.parseDouble(linea[6])), Double.parseDouble(linea[7]),
-                            linea[8].equals("NoFrost")));
+                            linea[8].equals("NoFrost"));
                     break;
                 case 10:
                     e = new Lavadora(linea[0], linea[1], Double.parseDouble(linea[2]),
