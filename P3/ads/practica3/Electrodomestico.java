@@ -73,4 +73,21 @@ public abstract class Electrodomestico {
     public String toString() {
         return String.format("%s %s, %.2f Euros", getMarca(), getModelo(), getPrecioBase());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Electrodomestico e = (Electrodomestico)o;
+
+        if ((this instanceof Television && !(e instanceof Television)) ||
+                (this instanceof Lavadora && !(e instanceof Lavadora)) ||
+                (this instanceof Frigorifico && !(e instanceof Frigorifico))) {
+            return false;
+        }
+        else {
+            if (this.marca.equals(e.marca) && this.modelo.equals(e.modelo)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
