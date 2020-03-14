@@ -14,17 +14,15 @@ public class VentaDomicilio extends Venta {
         return super.precioFinal() + getElectrodomestico().costeDomicilio();
     }
 
+    protected String printCosteDomicilio() {
+        return String.format("Coste porte:%19.2f Euros\n", getElectrodomestico().costeDomicilio());
+    }
+
     @Override
     public String getTicket() {
-        return String.format("--------------------------------------------\n" +
-                "Producto vendido: %s\n" +
-                "--------------------------------------------\n" +
-                "Precio producto:%15.2f Euros\n" +
-                "Descuento entrega:%13.2f Euros\n" +
-                "Coste porte:%19.2f Euros\n" +
-                "TOTAL:%25.2f Euros\n",
-                getElectrodomestico(), getElectrodomestico().getPrecioBase(),
-                getElectrodomestico().descuentoViejo(getElectrodomesticoViejo()),
-                getElectrodomestico().costeDomicilio(), precioFinal());
+        return  "--------------------------------------------\n" +
+                "Producto vendido: " + getElectrodomestico() +
+                "\n--------------------------------------------\n" +
+                printPrecioBase() + printDescuentoViejo() + printPrecioFinal() + printCosteDomicilio();
     }
 }
