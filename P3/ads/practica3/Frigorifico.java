@@ -1,7 +1,5 @@
 package ads.practica3;
 
-import ads.practica3.ElectrodomesticoVolumen;
-
 public class Frigorifico extends ElectrodomesticoVolumen {
     private boolean noFrost;
 
