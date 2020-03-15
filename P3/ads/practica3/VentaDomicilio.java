@@ -23,6 +23,6 @@ public class VentaDomicilio extends Venta {
         return  "--------------------------------------------\n" +
                 "Producto vendido: " + getElectrodomestico() +
                 "\n--------------------------------------------\n" +
-                printPrecioBase() + printDescuentoViejo() + printPrecioFinal() + printCosteDomicilio();
+                printPrecioBase() + printDescuentoViejo() + printCosteDomicilio() + printPrecioFinal();
     }
 }
