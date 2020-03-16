@@ -1,5 +1,10 @@
 package ads.practica3;
 
+/**
+ * Define un electrodomestico
+ *
+ * @author Leandro Garcia y Fabian Gutierrez
+ */
 public abstract class Electrodomestico {
     private String marca;
     private String modelo;
@@ -45,8 +50,18 @@ public abstract class Electrodomestico {
         this.claseEnergetica = claseEnergetica;
     }
 
+    /**
+     * Calcula el coste de envio a domicilio del electrodomestico
+     * @return el coste de envio
+     */
     public abstract double costeDomicilio();
 
+    /**
+     * Calcula el descuento a aplicar por la entrega de un electrodomestico viejo
+     * en el momento de la venta
+     * @param viejo el electrodomestico viejo entregado
+     * @return el descuento a sustraer
+     */
     public double descuentoViejo(Electrodomestico viejo) {
         int desc = 25;
 
@@ -76,7 +91,13 @@ public abstract class Electrodomestico {
 
     @Override
     public boolean equals(Object o) {
-        Electrodomestico e = (Electrodomestico)o;
+        Electrodomestico e;
+
+        if (!(o instanceof Electrodomestico)) {
+            return false;
+        }
+
+        e = (Electrodomestico)o;
 
         if ((this instanceof Television && !(e instanceof Television)) ||
                 (this instanceof Lavadora && !(e instanceof Lavadora)) ||
@@ -84,10 +105,7 @@ public abstract class Electrodomestico {
             return false;
         }
         else {
-            if (this.marca.equals(e.marca) && this.modelo.equals(e.modelo)) {
-                return true;
-            }
+            return this.marca.equals(e.marca) && this.modelo.equals(e.modelo);
         }
-        return false;
     }
 }

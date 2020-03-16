@@ -1,5 +1,10 @@
 package ads.practica3;
 
+/**
+ * Define un electrodomestico que tiene un cierto volumen
+ *
+ * @author Leandro Garcia y Fabian Gutierrez
+ */
 public abstract class ElectrodomesticoVolumen extends Electrodomestico {
     Dimension dimension;
     private double peso;

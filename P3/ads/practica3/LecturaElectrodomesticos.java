@@ -3,6 +3,11 @@ package ads.practica3;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Esta clase permite la lectura de electrodomesticos desde fichero
+ *
+ * @author Leandro Garcia y Fabian Gutierrez
+ */
 public class LecturaElectrodomesticos {
     public static ArrayList<Electrodomestico> leer(String fichero) throws IOException {
         ArrayList<Electrodomestico> electrodomesticos = new ArrayList<>();

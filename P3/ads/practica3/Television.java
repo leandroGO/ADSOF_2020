@@ -1,5 +1,10 @@
 package ads.practica3;
 
+/**
+ * Extiende la definicion de electrodomestico para televisores
+ *
+ * @author Leandro Garcia y Fabian Gutierrez
+ */
 public class Television extends Electrodomestico {
     private int tamPantalla;
 

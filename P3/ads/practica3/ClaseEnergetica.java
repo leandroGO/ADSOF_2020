@@ -1,10 +1,16 @@
 package ads.practica3;
 
+/**
+ * Define las distintas clases energeticas de los electrodomesticos.
+ * Ademas, establece entre estas una relacion de orden que permite compararlas
+ *
+ * @author Leandro Garcia y Fabian Gutierrez
+ */
 public enum ClaseEnergetica {
     A (1), B (2), C (3), D (4), Desconocida (-1);
 
     private final int valor;
-    ClaseEnergetica(int valor) {
+    ClaseEnergetica(int valor) {    //Es un metodo privado por definicion (constructor de enum)
         this.valor = valor;
     }
 
@@ -12,6 +18,11 @@ public enum ClaseEnergetica {
         return valor;
     }
 
+    /**
+     * Devuelve la clase energetica correspondiente a partir de un string
+     * @param nombre el nombre de la clase energetica en cadena de caracteres
+     * @return la clase energetica asociada a nombre
+     */
     public static ClaseEnergetica parseClase(String nombre) {
         switch (nombre) {
             case "A":
@@ -22,10 +33,8 @@ public enum ClaseEnergetica {
                 return ClaseEnergetica.C;
             case "D":
                 return ClaseEnergetica.D;
-            case "Desconocida":
-                return ClaseEnergetica.Desconocida;
             default:
-                return null;
+                return ClaseEnergetica.Desconocida;
         }
     }
 }

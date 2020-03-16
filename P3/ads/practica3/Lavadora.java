@@ -1,5 +1,10 @@
 package ads.practica3;
 
+/**
+ * Extiende la definicion de electrodomestico voluminoso para lavadoras
+ *
+ * @author Leandro Garcia y Fabian Gutierrez
+ */
 public class Lavadora extends ElectrodomesticoVolumen {
     private double kilosDeCarga;
     private int rpmCentrifugado;

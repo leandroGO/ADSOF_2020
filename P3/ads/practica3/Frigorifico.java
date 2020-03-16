@@ -1,5 +1,10 @@
 package ads.practica3;
 
+/**
+ * Extiende la definicion de electrodomestico voluminoso para frigorificos
+ *
+ * @author Leandro Garcia y Fabian Gutierrez
+ */
 public class Frigorifico extends ElectrodomesticoVolumen {
     private boolean noFrost;
 

@@ -1,5 +1,10 @@
 package ads.practica3;
 
+/**
+ * Extiende la definicion de television para televisores curvos
+ *
+ * @author Leandro Garcia y Fabian Gutierrez
+ */
 public class TelevisionCurva extends Television {
     private double peso;
     private Dimension dimension;
