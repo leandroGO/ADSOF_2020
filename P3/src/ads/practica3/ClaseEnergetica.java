@@ -14,9 +14,15 @@ public enum ClaseEnergetica {
         this.valor = valor;
     }
 
-    public int valor() {
-        return valor;
-    }
+    /**
+     * Compara dos clases energeticas
+     * @param c1 la primera clase energetica
+     * @param c2 la segunda clase energetica
+     * @return un numero positivo si c1 es superior que c2, un numero negativo en caso contrario
+     */
+    public static int compareClase(ClaseEnergetica c1, ClaseEnergetica c2) {
+        return c2.valor - c1.valor; //valor da una nocion del consumo, por lo que a menor valor,
+    }                               //mejor es la clase energetica
 
     /**
      * Devuelve la clase energetica correspondiente a partir de un string

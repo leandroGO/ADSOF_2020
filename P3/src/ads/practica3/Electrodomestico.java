@@ -69,7 +69,7 @@ public abstract class Electrodomestico {
             return 0;
         }
 
-        int d = viejo.claseEnergetica.valor() - this.claseEnergetica.valor();
+        int d = ClaseEnergetica.compareClase(this.claseEnergetica, viejo.claseEnergetica);
 
         if (viejo.claseEnergetica == ClaseEnergetica.Desconocida) {
             return 10;
