@@ -1,11 +1,11 @@
 package ads.practica3;
 
 /**
- * Tester del apartado 1 de la practica 3
+ * Tester del apartado 6 de la practica 3
  *
- * @author Profesores ADS
+ * @author Leandro Garcia y Fabian Gutierrez
  */
-public class TesterTienda1 {
+public class TesterTienda6 {
     public static void main(String[] args) {
         Electrodomestico tele1 = new Television("Loewe", "Art 48 4K Plata", 1699.00,
                 ClaseEnergetica.A, 48);
@@ -15,6 +15,9 @@ public class TesterTienda1 {
                 ClaseEnergetica.A, new Dimension(59.5, 60.5, 85.0), 72, 9.5, 1500);
         Electrodomestico frigo1 = new Frigorifico("Bosch", "KGN39VW21", 599.0,
                 ClaseEnergetica.A, new Dimension(60, 65, 201), 83.0, true);
+
+        System.out.print(Almacen.getStock() + "\n");
+        System.out.print(Almacen.getStock(tele1.parse()) + "\n");
 
         Venta[] ventas = new Venta[6];
         ventas[0] = new Venta(tele1);
@@ -29,6 +32,7 @@ public class TesterTienda1 {
         for (Venta v : ventas) {
 			System.out.print(v.getTicket());
 		}
+        System.out.print(Almacen.getStock());
     }
 }
 

@@ -37,4 +37,9 @@ public class Television extends Electrodomestico {
             return 35 + (tamPantalla - 40);
         }
     }
+
+    @Override
+    public String parse() {
+        return "Television";
+    }
 }

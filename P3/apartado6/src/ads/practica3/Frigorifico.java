@@ -31,4 +31,9 @@ public class Frigorifico extends ElectrodomesticoVolumen {
     public double costeDomicilio() {
         return Math.round(70 * this.dimension.calcularVolumen());
     }
+
+    @Override
+    public String parse() {
+        return "Frigorifico";
+    }
 }

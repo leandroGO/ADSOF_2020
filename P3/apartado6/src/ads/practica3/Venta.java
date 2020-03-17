@@ -14,14 +14,17 @@ public class Venta {
     private static int top = 0;
     private Electrodomestico electrodomestico;
     private Electrodomestico electrodomesticoViejo;
+    private boolean valida;
 
     public Venta(Electrodomestico electrodomestico) {
+        valida = Almacen.extract(electrodomestico.parse(), electrodomestico.getModelo());
         this.electrodomestico = electrodomestico;
         pilaVentas.add(this);
         top++;
     }
 
     public Venta(Electrodomestico electrodomestico, Electrodomestico electrodomesticoViejo) {
+        valida = Almacen.extract(electrodomestico.parse(), electrodomestico.getModelo());
         this.electrodomestico = electrodomestico;
         this.electrodomesticoViejo = electrodomesticoViejo;
         pilaVentas.add(this);
@@ -82,6 +85,12 @@ public class Venta {
      * @return el recibo generado
      */
     public String getTicket() {
+        if (!valida) {
+            return  "--------------------------------------------\n" +
+                    "Venta no valida\n" +
+                    "--------------------------------------------\n";
+        }
+
         return  "--------------------------------------------\n" +
                 "Producto vendido: " + electrodomestico +
                 "\n--------------------------------------------\n" +

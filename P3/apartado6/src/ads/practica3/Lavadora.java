@@ -56,4 +56,9 @@ public class Lavadora extends ElectrodomesticoVolumen {
             return 35 + 0.5 * (Math.ceil(getPeso()) - 50);
         }
     }
+
+    @Override
+    public String parse() {
+        return "Lavadora";
+    }
 }

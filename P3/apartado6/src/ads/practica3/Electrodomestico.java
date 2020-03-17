@@ -16,6 +16,7 @@ public abstract class Electrodomestico {
         this.modelo = modelo;
         this.precioBase = precioBase;
         this.claseEnergetica = claseEnergetica;
+        Almacen.add(this.parse(), modelo);
     }
 
     public String getMarca() {
@@ -83,6 +84,8 @@ public abstract class Electrodomestico {
 
         return desc;
     }
+
+    public abstract String parse();
 
     @Override
     public String toString() {
