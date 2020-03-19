@@ -1,0 +1,103 @@
+@startuml
+
+title __P3: Diagrama de Clases__\n
+
+    skinparam classAttributeIconSize 0
+    enum ClaseEnergetica {
+      A
+      B
+      C
+      D
+      Desconocida
+      -valor: int
+      +{static} compararClase(c1: ClaseEnergetica, c2: ClaseEnegetica): int 
+      +{static} parseClase(nombre: String): ClaseEnergetica
+    }
+
+    class Dimension {
+    -ancho: double
+    -largo: double 
+    -alto: double
+    +calcularVolumen(): double
+    }
+
+    abstract class Electrodomestico {
+      -marca: String
+      -modelo: String
+      -precioBase: double
+      +{abstract} costeDomicilio(): double
+      +descuentoViejo(viejo: Electrodomestico): double
+    }
+
+    abstract class ElectrodomesticoVolumen {
+      -peso: double
+    }
+
+    class Frigorifico {
+      -noFrost: boolean
+      +costeDomicilio(): double
+    }
+
+    class Lavadora {
+      -kilosDeCarga: double
+      -rpmCentrifugado: int
+      +costeDomicilio(): double
+    }
+
+
+    class LecturaElectrodomesticos {
+      +leer(fichero: String): ArrayList<Electrodomestico>
+    }
+
+    class Television {
+      -tamPantalla: int 
+      +costeDomicilio():double
+    }
+
+    class TelevisionCurva {
+      -peso: double
+      +costeDomicilio(): double
+    }
+
+    class Venta {
+      -{static} top: int
+      -{static} pilaVentas: List<Venta>
+      +precioFinal(): double
+      +getTicket(): String
+      +{static} resumenVentas(): String
+      +{static} ultima(): Venta
+      +{static} anular(): Venta
+      #printPrecioBase(): String
+      #printDescuentoViejo(): String
+      #printPrecioFinal(): String
+    }
+
+    class VentaCanarias {
+      -{static} tasaPorte: double
+      +setElectrodomesticoViejo(electrodomesticoViejo: Electrodomestico)
+      +precioFinal(): double
+      +getTicket(): String
+      #printCostePorte(): String
+    }
+
+    class VentaDomicilio {
+      +precioFinal(): double
+      +getTicket(): String
+      #printCosteDomicilio(): String
+    }
+
+
+  Electrodomestico o-left- ClaseEnergetica : claseEnergetica
+  ElectrodomesticoVolumen -up-|> Electrodomestico
+  ElectrodomesticoVolumen o-right- Dimension : dimension
+  Frigorifico -up-|> ElectrodomesticoVolumen
+  Lavadora -up-|> ElectrodomesticoVolumen
+  Television -up-|> Electrodomestico
+  TelevisionCurva -up-|> Television
+  TelevisionCurva o-- Dimension : dimension
+  Venta o-left- Electrodomestico : electrodomestico
+  Venta o-left- Electrodomestico : electrodomesticoViejo
+  VentaCanarias -up-|> Venta
+  VentaDomicilio -up-|> Venta
+
+@enduml
