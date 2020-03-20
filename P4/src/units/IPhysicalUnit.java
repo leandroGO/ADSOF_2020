@@ -1,5 +1,7 @@
 package units;
 
+import magnitude.exceptions.QuantityException;
+
 public interface IPhysicalUnit {
     boolean canTransformTo(IPhysicalUnit u);
     double transformTo(double d, IPhysicalUnit u) throws QuantityException;
