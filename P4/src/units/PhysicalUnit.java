@@ -16,9 +16,8 @@ public abstract class PhysicalUnit implements IPhysicalUnit {
 
     @Override
     public double transformTo(double d, IPhysicalUnit u) throws QuantityException {
-        //Si u no es unidad conocida
-        if (this.getQuantity() != u.getQuantity()) {
-            //algo con la exception
+        if (u.getQuantity().equals(Quantity.Unknown) || this.getQuantity() != u.getQuantity()) {
+            throw new QuantityException(this.getQuantity(), u.getQuantity());
         }
         return 0;
     }

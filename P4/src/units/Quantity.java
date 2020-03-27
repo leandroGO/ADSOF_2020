@@ -1,7 +1,7 @@
 package units;
 
 public enum Quantity {
-    L, t;
+    L, t, Unknown;
 
     @Override
     public String toString() {
