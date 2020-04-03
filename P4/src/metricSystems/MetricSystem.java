@@ -5,8 +5,8 @@ import units.IPhysicalUnit;
 import java.util.Collection;
 
 public class MetricSystem implements IMetricSystem {
-    IPhysicalUnit base;
-    Collection<IPhysicalUnit> units;
+    private IPhysicalUnit base;
+    private Collection<IPhysicalUnit> units;
 
     public MetricSystem(IPhysicalUnit base, Collection<IPhysicalUnit> units){
         this.base = base;

@@ -6,8 +6,7 @@ import metricSystems.MetricSystem;
 import units.IPhysicalUnit;
 import units.Length;
 
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.Arrays;
 
 public class SiLengthMetricSystem extends Length {
     public static final IPhysicalUnit KILOMETER = new SiLengthMetricSystem("km");
