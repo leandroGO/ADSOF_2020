@@ -8,7 +8,7 @@ public class MetricSystemTest {
 
 	public static void main(String[] args) {
 		IMetricSystem ms = SiLengthMetricSystem.SYSTEM;
-		//new SiLengthMetricSystem();	// daría error de compilación
+		//new SiLengthMetricSystem();	// daria error de compilacion
 		System.out.println(ms.units());
 		System.out.println("Base = "+ms.base());
 		

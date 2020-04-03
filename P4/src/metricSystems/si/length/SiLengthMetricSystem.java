@@ -25,7 +25,7 @@ public class SiLengthMetricSystem extends Length {
     }
 
     @Override
-    public boolean canTransformTo(IPhysicalUnit u){
-        return u instanceof SiLengthMetricSystem;
+    public IMetricSystem getMetricSystem() {
+        return SYSTEM;
     }
 }

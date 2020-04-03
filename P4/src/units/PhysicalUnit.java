@@ -10,8 +10,8 @@ public abstract class PhysicalUnit implements IPhysicalUnit {
     }
 
     @Override
-    public boolean canTransformTo(IPhysicalUnit u) {
-        return this.getQuantity() == u.getQuantity();
+    public boolean canTransformTo(IPhysicalUnit u){
+        return this.getMetricSystem() == u.getMetricSystem();
     }
 
     @Override
