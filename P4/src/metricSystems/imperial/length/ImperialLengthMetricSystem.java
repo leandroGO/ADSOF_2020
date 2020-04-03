@@ -23,4 +23,9 @@ public class ImperialLengthMetricSystem extends Length {
         super.transformTo(d,u); //hace comprobaciones generales arriba
         return 0;
     }
+
+    @Override
+    public IMetricSystem getMetricSystem() {
+        return SYSTEM;
+    }
 }
