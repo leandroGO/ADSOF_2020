@@ -1,8 +1,8 @@
 package units;
 
 public abstract class Time extends PhysicalUnit {
-    public Time(String abbr) {
-        super(abbr);
+    public Time(String abbr, double cFactor) {
+        super(abbr, cFactor);
     }
 
     @Override

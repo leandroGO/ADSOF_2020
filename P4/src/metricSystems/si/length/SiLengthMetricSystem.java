@@ -9,19 +9,13 @@ import units.Length;
 import java.util.Arrays;
 
 public class SiLengthMetricSystem extends Length {
-    public static final IPhysicalUnit KILOMETER = new SiLengthMetricSystem("km");
-    public static final IPhysicalUnit METER = new SiLengthMetricSystem("m");
-    public static final IPhysicalUnit MILIMETER = new SiLengthMetricSystem("mm");
+    public static final IPhysicalUnit KILOMETER = new SiLengthMetricSystem("km", 1000);
+    public static final IPhysicalUnit METER = new SiLengthMetricSystem("m", 1);
+    public static final IPhysicalUnit MILIMETER = new SiLengthMetricSystem("mm", 0.001);
     public static final IMetricSystem SYSTEM = new MetricSystem(METER, Arrays.asList(KILOMETER, METER, MILIMETER));
 
-    private SiLengthMetricSystem(String abbr) {
-        super(abbr);
-    }
-
-    @Override
-    public double transformTo(double d, IPhysicalUnit u) throws QuantityException {
-        super.transformTo(d,u); //hace comprobaciones generales arriba
-        return 0;
+    private SiLengthMetricSystem(String abbr, double cFactor) {
+        super(abbr, cFactor);
     }
 
     @Override

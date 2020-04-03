@@ -14,19 +14,19 @@ public class Magnitude implements IMagnitude {
 
     @Override
     public IMagnitude add(IMagnitude m) throws QuantityException {
-        return new Magnitude(m.transformTo(this.getUnit()).getValue() + this.getValue(),
+        return new Magnitude(this.getValue() + m.transformTo(this.getUnit()).getValue(),
                 this.getUnit());
     }
 
     @Override
     public IMagnitude subs(IMagnitude m) throws QuantityException {
-        return new Magnitude(m.transformTo(this.getUnit()).getValue() - this.getValue(),
+        return new Magnitude(this.getValue() - m.transformTo(this.getUnit()).getValue(),
                 this.getUnit());
     }
 
     @Override
     public IMagnitude transformTo(IPhysicalUnit c) throws QuantityException {
-        return new Magnitude(getUnit().transformTo(value,c), c);
+        return new Magnitude(getUnit().transformTo(value,c), c);    //transformTo does error control
     }
 
     @Override
@@ -37,5 +37,10 @@ public class Magnitude implements IMagnitude {
     @Override
     public double getValue() {
         return value;
+    }
+
+    @Override
+    public String toString() {
+        return value + " [" + unit + "]";
     }
 }

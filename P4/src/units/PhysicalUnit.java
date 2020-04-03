@@ -4,9 +4,16 @@ import magnitude.exceptions.QuantityException;
 
 public abstract class PhysicalUnit implements IPhysicalUnit {
     private String abbr;
+    private double cFactor;
 
-    public PhysicalUnit(String abbr) {
+    /**
+     * Creates a new physical unit.
+     * @param abbr the unit's abbreviation
+     * @param cFactor the conversion factor with respect to the base unit of its metric system
+     */
+    public PhysicalUnit(String abbr, double cFactor) {
         this.abbr = abbr;
+        this.cFactor = cFactor;
     }
 
     @Override
@@ -16,10 +23,14 @@ public abstract class PhysicalUnit implements IPhysicalUnit {
 
     @Override
     public double transformTo(double d, IPhysicalUnit u) throws QuantityException {
+        PhysicalUnit aux;
+
         if (u.getQuantity().equals(Quantity.Unknown) || !this.canTransformTo(u)) {
-            throw new QuantityException(this.getQuantity(), u.getQuantity());
+            throw new QuantityException(u.getQuantity(), this.getQuantity());
         }
-        return 0;
+
+        aux = (PhysicalUnit) u;
+        return d*this.cFactor/aux.cFactor;
     }
 
     @Override
