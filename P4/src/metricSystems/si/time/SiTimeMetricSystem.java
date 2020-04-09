@@ -2,14 +2,13 @@ package metricSystems.si.time;
 
 import metricSystems.IMetricSystem;
 import metricSystems.IMetricSystemConverter;
-import metricSystems.AbstractMetricSystem;
+import metricSystems.MetricSystem;
 import units.IPhysicalUnit;
 import units.SiTime;
-import units.Time;
 
 import java.util.Arrays;
 
-public class SiTimeMetricSystem extends AbstractMetricSystem {
+public class SiTimeMetricSystem extends MetricSystem {
     public static final IPhysicalUnit HOUR = new SiTime("h", 60);
     public static final IPhysicalUnit SECOND = new SiTime("s", 1);
     public static final IPhysicalUnit MILISECOND = new SiTime("ms", 0.001);
