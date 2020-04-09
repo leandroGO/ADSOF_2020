@@ -1,6 +1,8 @@
 package magnitude;
 
 import magnitude.exceptions.QuantityException;
+import magnitude.exceptions.UnknownUnitException;
+import metricSystems.IMetricSystemConverter;
 import units.IPhysicalUnit;
 
 public class Magnitude implements IMagnitude {
@@ -26,7 +28,20 @@ public class Magnitude implements IMagnitude {
 
     @Override
     public IMagnitude transformTo(IPhysicalUnit c) throws QuantityException {
-        return new Magnitude(getUnit().transformTo(value,c), c);    //transformTo does error control
+        IMetricSystemConverter conv;
+
+        if (!unit.getQuantity().equals(c.getQuantity())) {
+            throw new QuantityException(unit.getQuantity(), c.getQuantity());
+        }
+
+        if (unit.getMetricSystem().equals(c.getMetricSystem())) {
+            return new Magnitude(getUnit().transformTo(value,c), c);    //transformTo does error control
+        }
+
+        if ((conv = unit.getMetricSystem().getConverter(c.getMetricSystem())) == null) {
+            throw new UnknownUnitException(getUnit(), c);
+        }
+        return conv.transformTo(this, c);
     }
 
     @Override

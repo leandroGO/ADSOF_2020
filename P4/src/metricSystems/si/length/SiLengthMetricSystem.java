@@ -1,25 +1,27 @@
 package metricSystems.si.length;
 
-import magnitude.exceptions.QuantityException;
 import metricSystems.IMetricSystem;
-import metricSystems.MetricSystem;
+import metricSystems.IMetricSystemConverter;
+import metricSystems.AbstractMetricSystem;
 import units.IPhysicalUnit;
-import units.Length;
+import units.SiLength;
 
 import java.util.Arrays;
 
-public class SiLengthMetricSystem extends Length {
-    public static final IPhysicalUnit KILOMETER = new SiLengthMetricSystem("km", 1000);
-    public static final IPhysicalUnit METER = new SiLengthMetricSystem("m", 1);
-    public static final IPhysicalUnit MILIMETER = new SiLengthMetricSystem("mm", 0.001);
-    public static final IMetricSystem SYSTEM = new MetricSystem(METER, Arrays.asList(KILOMETER, METER, MILIMETER));
+public class SiLengthMetricSystem extends AbstractMetricSystem{
+    public static final IPhysicalUnit KILOMETER = new SiLength("km", 1000);
+    public static final IPhysicalUnit METER = new SiLength("m", 1);
+    public static final IPhysicalUnit MILIMETER = new SiLength("mm", 0.001);
+    public static final IMetricSystem SYSTEM = new SiLengthMetricSystem();
 
-    private SiLengthMetricSystem(String abbr, double cFactor) {
-        super(abbr, cFactor);
+    private SiLengthMetricSystem() {
+        super(METER, Arrays.asList(KILOMETER, METER, MILIMETER));
     }
 
-    @Override
-    public IMetricSystem getMetricSystem() {
-        return SYSTEM;
+    public static boolean registerConverter(IMetricSystemConverter c) {
+        if (c.sourceSystem() == SYSTEM) {
+            return SiLengthMetricSystem.SYSTEM.addConverter(c) && c.targetSystem().addConverter(c.reverse());
+        }
+        return false;
     }
 }
