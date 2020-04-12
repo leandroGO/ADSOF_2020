@@ -34,13 +34,7 @@ public class MetricSystemConverter implements IMetricSystemConverter{
 
         try {
             a = from.transformTo(from.getUnit().getMetricSystem().base());
-        } catch (QuantityException e) {
-            throw new UnknownUnitException(from.getUnit(), to);
-        }
-
-        b = new Magnitude(a.getValue()*factor, to.getMetricSystem().base());
-
-        try {
+            b = new Magnitude(a.getValue()*factor, to.getMetricSystem().base());
             return b.transformTo(to);
         } catch(QuantityException e) {
             throw new UnknownUnitException(from.getUnit(), to);
