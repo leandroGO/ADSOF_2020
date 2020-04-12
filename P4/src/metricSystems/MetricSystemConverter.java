@@ -6,6 +6,11 @@ import magnitude.exceptions.QuantityException;
 import magnitude.exceptions.UnknownUnitException;
 import units.IPhysicalUnit;
 
+/**
+ * Defines a generic MetricSystemConverter.
+ *
+ * @author Leandro Garcia, Fabian Gutierrez
+ */
 public class MetricSystemConverter implements IMetricSystemConverter{
     IMetricSystem source;
     IMetricSystem target;
@@ -30,7 +35,6 @@ public class MetricSystemConverter implements IMetricSystemConverter{
     @Override
     public IMagnitude transformTo(IMagnitude from, IPhysicalUnit to) throws UnknownUnitException {
         IMagnitude a, b;
-        IMetricSystemConverter c;
 
         try {
             a = from.transformTo(from.getUnit().getMetricSystem().base());

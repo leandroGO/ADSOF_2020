@@ -1,7 +1,12 @@
 package units;
 
+/**
+ * Defines multiple physical quantities.
+ *
+ * @author Leandro Garcia, Fabian Gutierrez
+ */
 public enum Quantity {
-    L, t, Unknown;
+    L, t;
 
     @Override
     public String toString() {

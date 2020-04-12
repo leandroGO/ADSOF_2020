@@ -3,6 +3,11 @@ package magnitude.exceptions;
 import units.IPhysicalUnit;
 import units.Quantity;
 
+/**
+ * Extends the definition of QuantityException to also be associated to specific units.
+ *
+ * @author Leandro Garcia, Fabian Gutierrez
+ */
 public class UnknownUnitException extends QuantityException {
     String a1;
     String a2;

@@ -5,6 +5,11 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Defines an abstract metric system.
+ *
+ * @author Leandro Garcia, Fabian Gutierrez
+ */
 public abstract class MetricSystem implements IMetricSystem {
     private IPhysicalUnit base;
     private Collection<IPhysicalUnit> units;

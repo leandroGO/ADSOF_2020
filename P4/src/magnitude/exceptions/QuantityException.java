@@ -2,6 +2,11 @@ package magnitude.exceptions;
 
 import units.Quantity;
 
+/**
+ * Defines a QuantityException, an Exception associated to two Quantities.
+ *
+ * @author Leandro Garcia, Fabian Gutierrez
+ */
 public class QuantityException extends Exception {
     protected Quantity q1;
     protected Quantity q2;

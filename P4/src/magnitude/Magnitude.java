@@ -5,6 +5,11 @@ import magnitude.exceptions.UnknownUnitException;
 import metricSystems.IMetricSystemConverter;
 import units.IPhysicalUnit;
 
+/**
+ * Defines a concrete Magnitude (value and unit).
+ *
+ * @author Leandro Garcia, Fabian Gutierrez
+ */
 public class Magnitude implements IMagnitude {
     private double value;
     private IPhysicalUnit unit;

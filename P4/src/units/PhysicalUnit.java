@@ -2,6 +2,11 @@ package units;
 
 import magnitude.exceptions.QuantityException;
 
+/**
+ * Defines an abstract physical unit.
+ *
+ * @author Leandro Garcia, Fabian Gutierrez
+ */
 public abstract class PhysicalUnit implements IPhysicalUnit {
     private String abbr;
     private double cFactor;
@@ -25,7 +30,7 @@ public abstract class PhysicalUnit implements IPhysicalUnit {
     public double transformTo(double d, IPhysicalUnit u) throws QuantityException {
         PhysicalUnit aux;
 
-        if (u.getQuantity().equals(Quantity.Unknown) || !this.canTransformTo(u)) {
+        if (!this.canTransformTo(u)) {
             throw new QuantityException(u.getQuantity(), this.getQuantity());
         }
 
