@@ -9,7 +9,7 @@ import units.SiTime;
 import java.util.Arrays;
 
 public class SiTimeMetricSystem extends MetricSystem {
-    public static final IPhysicalUnit HOUR = new SiTime("h", 60);
+    public static final IPhysicalUnit HOUR = new SiTime("h", 3600);
     public static final IPhysicalUnit SECOND = new SiTime("s", 1);
     public static final IPhysicalUnit MILISECOND = new SiTime("ms", 0.001);
     public static final IMetricSystem SYSTEM = new SiTimeMetricSystem();
