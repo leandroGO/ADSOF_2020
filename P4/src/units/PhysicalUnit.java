@@ -31,7 +31,7 @@ public abstract class PhysicalUnit implements IPhysicalUnit {
         PhysicalUnit aux;
 
         if (!this.canTransformTo(u)) {
-            throw new QuantityException(u.getQuantity(), this.getQuantity());
+            throw new QuantityException(this.getQuantity(), u.getQuantity());
         }
 
         aux = (PhysicalUnit) u;
