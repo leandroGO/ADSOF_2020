@@ -1,7 +1,8 @@
-package units;
+package units.si.length;
 
 import metricSystems.IMetricSystem;
 import metricSystems.si.length.SiLengthMetricSystem;
+import units.Length;
 
 public class SiLength extends Length {
     public SiLength(String abbr, double cFactor) {

@@ -4,7 +4,7 @@ import metricSystems.IMetricSystem;
 import metricSystems.IMetricSystemConverter;
 import metricSystems.MetricSystem;
 import units.IPhysicalUnit;
-import units.SiTime;
+import units.si.time.SiTime;
 
 import java.util.Arrays;
 

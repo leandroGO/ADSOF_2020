@@ -1,7 +1,8 @@
-package units;
+package units.si.time;
 
 import metricSystems.IMetricSystem;
 import metricSystems.si.time.SiTimeMetricSystem;
+import units.Time;
 
 public class SiTime extends Time {
     public SiTime(String abbr, double cFactor) {
