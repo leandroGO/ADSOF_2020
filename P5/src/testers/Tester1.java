@@ -1,8 +1,11 @@
 package testers;
 
+import graphs.Graph;
 import graphs.Node;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Tester1 {
     Graph<String, Integer> g = new Graph<String, Integer>();
