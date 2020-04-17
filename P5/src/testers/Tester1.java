@@ -19,7 +19,7 @@ public class Tester1 {
     g.connect(n2, 1, n1);
     System.out.println(g); // El grafo contiene 2 nodos y 5 enlaces
     for (Node<String> n : g) // Colección de dos nodos (n1 y n2)
-                System.out.println("Nodo "+n);
+                System.out.println("Nodo " + n);
         List<Node<String>> nodos = new ArrayList<>(g); // podemos crear una lista a partir de g
     System.out.println(nodos);
     // Dos métodos para chequeo de conexión, la primera recibe el valor del Nodo
