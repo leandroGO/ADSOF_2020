@@ -1,29 +1,29 @@
 package graphs;
 
 public class Edge<T> {
-    private Node origin;
-    private Node destination;
+    private Node<?> origin;
+    private Node<?> destination;
     private T info;
 
-    public Edge(Node origin, T info, Node destination) {
+    public Edge(Node<?> origin, T info, Node<?> destination) {
         this.origin = origin;
         this.destination = destination;
         this.info = info;
     }
 
-    public Node getOrigin() {
+    public Node<?> getOrigin() {
         return origin;
     }
 
-    public void setOrigin(Node origin) {
+    public void setOrigin(Node<?> origin) {
         this.origin = origin;
     }
 
-    public Node getDestination() {
+    public Node<?> getDestination() {
         return destination;
     }
 
-    public void setDestination(Node destination) {
+    public void setDestination(Node<?> destination) {
         this.destination = destination;
     }
 

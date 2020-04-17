@@ -31,6 +31,9 @@ public class Node<T> {
 
     }
 
+    public T getEdgeValues(Node<T> n2) {
+    }
+
     @Override
     public String toString() {
         return id + info.toString();
