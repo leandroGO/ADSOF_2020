@@ -2,13 +2,14 @@ package testers;
 
 import graphs.Graph;
 import graphs.Node;
+import graphs.exceptions.NotInGraphException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Tester1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotInGraphException {
         Graph<String, Integer> g = new Graph<String, Integer>();
         Node<String> n1 = new Node<String>("s0");
         Node<String> n2 = new Node<String>("s1");
