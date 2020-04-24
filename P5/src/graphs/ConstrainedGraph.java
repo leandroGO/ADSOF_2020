@@ -15,24 +15,15 @@ public class ConstrainedGraph<N,E> extends Graph<N,E> {
     }
 
     public boolean forAll(Predicate<? super Node<N>> predicate) {
-        List<Node<N>> n = stream().filter(predicate).collect(Collectors.toList());
-        return size() == n.size();
+        return stream().allMatch(predicate);
     }
 
     public boolean one(Predicate<? super Node<N>> predicate) {
-        List<Node<N>> n = stream().filter(predicate).collect(Collectors.toList());
-        return n.size() == 1;
+        return stream().filter(predicate).count() == 1;
     }
 
     public boolean exists(Predicate<? super Node<N>> predicate) {
-        List<Node<N>> n = stream().filter(predicate).collect(Collectors.toList());
-        if (n.size() >= 1) {
-            witness = Optional.of(n.get(0));
-            return true;
-        }
-        else {
-            witness = Optional.empty();
-            return false;
-        }
+        witness = stream().filter(predicate).findAny();
+        return witness.isPresent();
     }
 }
