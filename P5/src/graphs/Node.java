@@ -23,6 +23,10 @@ public class Node<T> {
         this.graph = graph;
     }
 
+    public T getValue() {
+        return info;
+    }
+
     public List<Node<T>> neighbours() {
         return graph.getEdgesFrom(this).stream()
                 .map(Edge::getDestination)

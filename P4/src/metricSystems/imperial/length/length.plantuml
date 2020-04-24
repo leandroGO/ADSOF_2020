@@ -1,22 +1,13 @@
 @startuml
 
-title __LENGTH's Class Diagram__\n
-
-  namespace metricSystems {
-    namespace imperial.length {
-      class metricSystems.imperial.length.ImperialLengthMetricSystem {
+      class ImperialLengthMetricSystem {
           {static} + FOOT : IPhysicalUnit
           {static} + INCH : IPhysicalUnit
           {static} + MILE : IPhysicalUnit
           {static} + SYSTEM : IMetricSystem
           {static} + registerConverter()
-          - ImperialLengthMetricSystem()
       }
-    }
-  }
-  
-
-  metricSystems.imperial.length.ImperialLengthMetricSystem -up-|> metricSystems.MetricSystem
+ImperialLengthMetricSystem -up-|> MetricSystem
 
 
 right footer

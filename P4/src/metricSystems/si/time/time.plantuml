@@ -1,22 +1,15 @@
 @startuml
 
-title __TIME's Class Diagram__\n
-
-  namespace metricSystems {
-    namespace si.time {
-      class metricSystems.si.time.SiTimeMetricSystem {
+      class SiTimeMetricSystem {
           {static} + HOUR : IPhysicalUnit
           {static} + MILISECOND : IPhysicalUnit
           {static} + SECOND : IPhysicalUnit
           {static} + SYSTEM : IMetricSystem
           {static} + registerConverter()
-          - SiTimeMetricSystem()
       }
-    }
-  }
   
 
-  metricSystems.si.time.SiTimeMetricSystem -up-|> metricSystems.MetricSystem
+SiTimeMetricSystem -up-|> MetricSystem
 
 
 right footer

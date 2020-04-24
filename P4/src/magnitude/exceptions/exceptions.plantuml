@@ -1,32 +1,16 @@
 @startuml
 
-title __EXCEPTIONS's Class Diagram__\n
-
-  namespace magnitude {
-    namespace exceptions {
-      class magnitude.exceptions.QuantityException {
-          + QuantityException()
-          + toString()
+      class  QuantityException {
       }
-    }
-  }
-  
 
-  namespace magnitude {
-    namespace exceptions {
-      class magnitude.exceptions.UnknownUnitException {
+      class  UnknownUnitException {
           ~ a1 : String
           ~ a2 : String
-          + UnknownUnitException()
-          + toString()
       }
-    }
-  }
-  
 
-  magnitude.exceptions.QuantityException o-- units.Quantity : q1
-  magnitude.exceptions.QuantityException o-- units.Quantity : q2
-  magnitude.exceptions.UnknownUnitException -up-|> magnitude.exceptions.QuantityException
+   QuantityException o-- units.Quantity : q1
+   QuantityException o-- units.Quantity : q2
+   UnknownUnitException -up-|>  QuantityException
 
 
 right footer

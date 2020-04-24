@@ -1,34 +1,24 @@
 @startuml
 
-title __MAGNITUDE's Class Diagram__\n
-
-  namespace magnitude {
-    interface magnitude.IMagnitude {
-        {abstract} + add()
+    interface IMagnitude {
+        {abstract} + add(m: IMagnitude)
         {abstract} + getUnit()
         {abstract} + getValue()
-        {abstract} + subs()
-        {abstract} + transformTo()
+        {abstract} + subs(m: IMagnitude)
+        {abstract} + transformTo(c: IPhysicalUnit)
     }
-  }
-  
-
-  namespace magnitude {
-    class magnitude.Magnitude {
+    
+    class Magnitude {
         - value : double
-        + Magnitude()
-        + add()
+        + add(m: IMagnitude)
         + getUnit()
         + getValue()
-        + subs()
-        + toString()
-        + transformTo()
+        + subs(m: IMagnitude)
+        + transformTo(c: IPhysicalUnit)
     }
-  }
-  
 
-  magnitude.Magnitude .up.|> magnitude.IMagnitude
-  magnitude.Magnitude o-- units.IPhysicalUnit : unit
+  Magnitude .up.|> IMagnitude
+  Magnitude o-- units.IPhysicalUnit : unit
 
 
 right footer

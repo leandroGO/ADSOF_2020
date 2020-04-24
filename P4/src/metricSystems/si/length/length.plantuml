@@ -1,22 +1,15 @@
 @startuml
 
-title __LENGTH's Class Diagram__\n
-
-  namespace metricSystems {
-    namespace si.length {
-      class metricSystems.si.length.SiLengthMetricSystem {
+      class SiLengthMetricSystem {
           {static} + KILOMETER : IPhysicalUnit
           {static} + METER : IPhysicalUnit
           {static} + MILIMETER : IPhysicalUnit
           {static} + SYSTEM : IMetricSystem
           {static} + registerConverter()
-          - SiLengthMetricSystem()
       }
-    }
-  }
   
 
-  metricSystems.si.length.SiLengthMetricSystem -up-|> metricSystems.MetricSystem
+SiLengthMetricSystem -up-|> MetricSystem
 
 
 right footer
