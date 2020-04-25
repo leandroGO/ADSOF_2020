@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class BlackBoxComparator<N,E> implements Comparator<ConstrainedGraph<N,E>> {
-    private List<Property<N>> properties = new ArrayList<Property<N>>();
+    private List<Property<N>> properties = new ArrayList<>();
 
     public BlackBoxComparator<N,E> addCriteria(Criteria crt, Predicate<? super Node<N>> predicate) {
-        this.properties.add(new Property<N>(crt, predicate));
+        this.properties.add(new Property<>(crt, predicate));
         return this;
     }
 

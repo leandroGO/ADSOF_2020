@@ -12,10 +12,10 @@ import java.util.List;
 
 public class Tester2 {
     public static void main(String[] args) throws NotInGraphException {
-        ConstrainedGraph<Integer, Integer> g = new ConstrainedGraph<Integer, Integer>();
-        Node<Integer> n1 = new Node<Integer>(1);
-        Node<Integer> n2 = new Node<Integer>(2);
-        Node<Integer> n3 = new Node<Integer>(3);
+        ConstrainedGraph<Integer, Integer> g = new ConstrainedGraph<>();
+        Node<Integer> n1 = new Node<>(1);
+        Node<Integer> n2 = new Node<>(2);
+        Node<Integer> n3 = new Node<>(3);
         g.addAll(Arrays.asList(n1, n2, n3));
         g.connect(n1, 1, n2);
         g.connect(n1, 7, n3);
@@ -29,10 +29,10 @@ public class Tester2 {
         g.exists( n -> n.isConnectedTo(n2)); // Se cumple: Optional tiene valor
         g.getWitness().ifPresent( w -> System.out.println("Witness 2 = "+g.getWitness().get()));
 
-        ConstrainedGraph<Integer, Integer> g1 = new ConstrainedGraph<Integer, Integer>();
-        g1.addAll(Arrays.asList(new Node<Integer>(4)));
+        ConstrainedGraph<Integer, Integer> g1 = new ConstrainedGraph<>();
+        g1.addAll(Arrays.asList(new Node<>(4)));
 
-        BlackBoxComparator<Integer, Integer> bbc = new BlackBoxComparator<Integer, Integer>();
+        BlackBoxComparator<Integer, Integer> bbc = new BlackBoxComparator<>();
         bbc.addCriteria( Criteria.EXISTENTIAL, n -> n.isConnectedTo(1)).
                 addCriteria( Criteria.UNITARY, n -> n.neighbours().isEmpty()).
                 addCriteria( Criteria.UNIVERSAL, n -> n.getValue().equals(4));
