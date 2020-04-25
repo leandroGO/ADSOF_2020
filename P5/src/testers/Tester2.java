@@ -1,10 +1,14 @@
 package testers;
 
+import graphs.BlackBoxComparator;
 import graphs.ConstrainedGraph;
+import graphs.Criteria;
 import graphs.Node;
 import graphs.exceptions.NotInGraphException;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Tester2 {
     public static void main(String[] args) throws NotInGraphException {
@@ -24,5 +28,17 @@ public class Tester2 {
         g.getWitness().ifPresent( w -> System.out.println("Witness 1 = "+g.getWitness().get()));
         g.exists( n -> n.isConnectedTo(n2)); // Se cumple: Optional tiene valor
         g.getWitness().ifPresent( w -> System.out.println("Witness 2 = "+g.getWitness().get()));
+
+        ConstrainedGraph<Integer, Integer> g1 = new ConstrainedGraph<Integer, Integer>();
+        g1.addAll(Arrays.asList(new Node<Integer>(4)));
+
+        BlackBoxComparator<Integer, Integer> bbc = new BlackBoxComparator<Integer, Integer>();
+        bbc.addCriteria( Criteria.EXISTENTIAL, n -> n.isConnectedTo(1)).
+                addCriteria( Criteria.UNITARY, n -> n.neighbours().isEmpty()).
+                addCriteria( Criteria.UNIVERSAL, n -> n.getValue().equals(4));
+
+        List<ConstrainedGraph<Integer, Integer>> cgs = Arrays.asList(g, g1);
+        Collections.sort(cgs, bbc); // Usamos el comparador para ordenar una lista de dos grafos
+        System.out.println(cgs); // imprime g (cumple la 2ª propiedad) y luego g1 (cumple la 2º y 3º) (corregida)
     }
 }
