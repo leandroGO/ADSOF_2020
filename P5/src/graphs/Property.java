@@ -12,15 +12,18 @@ public class Property<N> {
     }
 
     public boolean test(ConstrainedGraph<N,?> g) {
-        if (crt == Criteria.UNIVERSAL) {
-            return g.forAll(predicate);
+        switch (crt) {
+            case UNIVERSAL:
+                return g.forAll(predicate);
+
+            case EXISTENTIAL:
+                return g.exists(predicate);
+
+            case UNITARY:
+                return g.one(predicate);
+
+            default:
+                return false;
         }
-        if (crt == Criteria.EXISTENTIAL) {
-            return g.exists(predicate);
-        }
-        if (crt == Criteria.UNITARY) {
-            return g.one(predicate);
-        }
-        return false;
     }
 }
