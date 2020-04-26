@@ -25,6 +25,6 @@ public class RuleSet<T> {
     }
 
     public void process() {
-        rules.stream().forEach(r -> execContext.stream().filter(r.getCond()).forEach(r.getAccion()));
+        rules.forEach(r -> execContext.stream().filter(r.getCond()).forEach(r.getAccion()));
     }
 }
