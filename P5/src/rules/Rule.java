@@ -18,36 +18,12 @@ public class Rule<T> {
         this.nombre = nombre;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
     public Predicate<T> getCond() {
         return cond;
     }
 
-    public void setCond(Predicate<T> cond) {
-        this.cond = cond;
-    }
-
     public Consumer<T> getAccion() {
         return accion;
-    }
-
-    public void setAccion(Consumer<T> accion) {
-        this.accion = accion;
     }
 
     public static <T> Rule<T> rule(String nombre, String desc) {
