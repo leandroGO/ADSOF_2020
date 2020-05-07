@@ -9,9 +9,13 @@ public class Rule<T> {
     private Predicate<T> cond;
     private Consumer<T> accion;
 
-    private Rule(String nombre, String desc) {
+    protected Rule(String nombre, String desc) {
         this.nombre = nombre;
         this.desc = desc;
+    }
+
+    protected Rule(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getNombre() {

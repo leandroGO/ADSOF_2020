@@ -1,4 +1,7 @@
 package rules.observer;
 
-public class Observer {
+public interface Observer {
+    Subject getSubject();
+    String getAttr();
+    void process();
 }
